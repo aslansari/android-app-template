@@ -1,0 +1,51 @@
+name: Rename Template
+
+on: pull_request
+
+jobs:
+  rename-template:
+    strategy:
+      matrix:
+        useHiltDependencies: [true, false]
+        useRoomDependencies: [true, false]
+        useRetrofitDependencies: [true, false]
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set useHiltDependencies
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "useHiltDependencies[ ]+ : true"
+          replace: "useHiltDependencies : ${{ matrix.useHiltDependencies }}"
+          include: "**setup.gradle"
+
+      - name: Set useRoomDependencies
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "useRoomDependencies[ ]+ : true"
+          replace: "useRoomDependencies : ${{ matrix.useRoomDependencies }}"
+          include: "**setup.gradle"
+
+      - name: Set useRetrofitDependencies
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "useRetrofitDependencies[ ]+ : true"
+          replace: "useRetrofitDependencies : ${{ matrix.useRetrofitDependencies }}"
+          include: "**setup.gradle"
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 17
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Rename
+        run: ./gradlew renameTemplate
+
+      - name: Build
+        run: ./gradlew build
