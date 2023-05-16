@@ -1,7 +1,9 @@
 def renameConfig = [
+        templateId               : "template.name",
         templateName             : "template",
         templateAppId            : "template.app.id",
         templateMaterialThemeName: "TemplateTheme",
+        newName                  : "name", // project used in plugins
         newPackage               : "domain.yourname.app",
         newProjectName           : "Your Project",
         newMaterialThemeName     : "MyMaterialTheme",
@@ -88,6 +90,12 @@ task replaceTemplateReferences {
         )
 
         replaceTextInFile(
+                "${rootDir}/app/build.gradle.kts",
+                "id\\(\"${renameConfig.templateId}",
+                "id\\(\"${renameConfig.newName}",
+        )
+
+        replaceTextInFile(
                 "${rootDir}/settings.gradle.kts",
                 "rootProject.name = \"${renameConfig.templateName}\"",
                 "rootProject.name = \"${renameConfig.newProjectName}\"",
@@ -97,6 +105,30 @@ task replaceTemplateReferences {
                 "${rootDir}/app/src/main/res/values/strings.xml",
                 "<string name=\"app_name\">${renameConfig.templateName}</string>",
                 "<string name=\"app_name\">${renameConfig.newProjectName}</string>",
+        )
+
+        replaceTextInFile(
+                "${rootDir}/build-logic/convention/build.gradle.kts",
+                "id = \"${renameConfig.templateId}",
+                "id = \"${renameConfig.newName}",
+        )
+
+        replaceTextInFile(
+                "${rootDir}/build-logic/convention/build.gradle.kts",
+                "group = \"${renameConfig.templateName}",
+                "group = \"${renameConfig.newPackage}",
+        )
+
+        replaceTextInFile(
+                "${rootDir}/build-logic/convention/src/main/kotlin/AndroidFeatureConventionPlugin.kt",
+                "apply\\(\"${renameConfig.templateId}",
+                "apply\\(\"${renameConfig.newName}",
+        )
+
+        replaceTextInFile(
+                "${rootDir}/build-logic/convention/src/main/kotlin/AndroidFeatureConventionPlugin.kt",
+                "apply\\(\"${renameConfig.templateName}",
+                "apply\\(\"${renameConfig.newPackage}",
         )
     }
 }
@@ -135,8 +167,8 @@ task renameTemplate {
 
     dependsOn(
             keepOrRemoveDependencies,
-            renameAppPackage,
             replaceTemplateReferences,
+            renameAppPackage,
             deleteSetupCode,
     )
 

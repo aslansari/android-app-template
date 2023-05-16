@@ -1,9 +1,8 @@
 plugins {
-    id("com.android.application")
-    id("com.google.dagger.hilt.android")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("org.jmailen.kotlinter")
+    id("template.name.android.application")
+    id("template.name.android.application.compose")
+    id("template.name.android.hilt")
+    id("template.name.kotlinter")
 }
 
 android {
