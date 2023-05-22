@@ -1,21 +1,33 @@
 [versions]
-com-android-application = "8.1.0-alpha11"
-org-jetbrains-kotlin-android = "1.8.21"
-androidDesugarJdkLibs = "2.0.3"
-dagger = "2.45"
-google-services = "4.3.15"
-firebase-crashlytics-gradle = "2.9.4"
-com-android-test = "8.1.0-alpha11"
 accompanist = "0.30.1"
-activityCompose = "1.7.1"
-androidxTest = "1.1.5"
 appCompat = "1.6.1"
+androidDesugarJdkLibs = "2.0.3"
+androidGradlePlugin = "8.1.0-alpha11"
+androidxActivity = "1.7.1"
+androidxAppCompat = "1.5.1"
+androidxBrowser = "1.4.0"
+androidxComposeBom = "2023.05.01"
+androidxComposeCompiler = "1.4.7"
+androidxComposeMaterial3 = "1.1.0-alpha06"
+androidxComposeRuntimeTracing = "1.0.0-alpha01"
+androidxCore = "1.9.0"
+androidxCoreSplashscreen = "1.0.0"
+androidxDataStore = "1.0.0"
+androidxEspresso = "3.5.0"
+androidxHiltNavigationCompose = "1.0.0"
+androidxLifecycle = "2.6.0-alpha05"
+androidxTest = "1.1.5"
+firebaseBom = "31.2.0"
+firebaseCrashlyticsPlugin = "2.9.4"
+gmsPlugin = "4.3.14"
+kotlin = "1.8.21"
+ksp = "1.8.21-1.0.11"
+dagger = "2.45"
+com-android-test = "8.1.0-alpha11"
 compileSdk = "33"
-composeBom = "2023.05.01"
 composeCompiler = "1.4.7"
 detektGradlePlugin = "1.22.0"
 espresso = "3.5.1"
-gradle = "8.0.1"
 gradleVersionsPlugin = "0.46.0"
 hilt = "2.46.1"
 junit = "4.13.2"
@@ -33,15 +45,18 @@ room = "2.5.1"
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktxCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTest" }
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 compose-material = { group = "androidx.compose.material3", name = "material3" }
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -63,16 +78,19 @@ square-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "r
 square-retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 
 # Dependencies of the included build-logic
-android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "com-android-application" }
-kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "org-jetbrains-kotlin-android" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+firebase-crashlytics-gradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsPlugin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 [plugins]
-com-android-application = { id = "com.android.application", version.ref = "com-android-application" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+com-android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
-google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-gradle" }
+google-services = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
 com-android-test = { id = "com.android.test", version.ref = "com-android-test" }
 gradle-versions = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionsPlugin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

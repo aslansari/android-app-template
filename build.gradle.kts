@@ -7,6 +7,9 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android) apply false
     alias(libs.plugins.dagger.hilt.android) apply false
     alias(libs.plugins.com.android.test) apply false
+    alias(libs.plugins.google.services) apply false
+    alias(libs.plugins.firebase.crashlytics) apply false
+    alias(libs.plugins.ksp) apply false
 }
 
 apply(from = "buildscripts/githooks.gradle")

@@ -28,6 +28,8 @@ java {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.firebase.crashlytics.gradlePlugin)
+    compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {
@@ -63,6 +65,10 @@ gradlePlugin {
         register("androidTest") {
             id = "template.name.android.test"
             implementationClass = "AndroidTestConventionPlugin"
+        }
+        register("androidRoom") {
+            id = "template.name.android.room"
+            implementationClass = "AndroidRoomConventionPlugin"
         }
         register("androidHilt") {
             id = "template.name.android.hilt"
