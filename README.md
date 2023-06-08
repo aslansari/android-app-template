@@ -1,6 +1,9 @@
 # Android App Template
 
-This is a GitHub template repository intended to kickstart development on an Android application. This project comes set with a handful of tools that [Adam](https://github.com/AdamMc331) finds important and relevant to every project. If you think something is missing, or feel strongly that a setup should be changed, please submit an [Issue](https://github.com/AdamMc331/AndroidAppTemplate/issues/new).
+This GitHub template repository serves as a starting point for developing Android applications. 
+I've started this Android application template using [Adam](https://github.com/AdamMc331)'s template. 
+Along with the existing tools, I've added some features that align with my specific needs. These enhancements aim to make the development process smoother and improve the app's functionality. However, I'm open to suggestions and improvements. If you think there are other important elements to include or have recommendations for modifying the current setup, please share your thoughts. Your input is highly appreciated.
+Note that, since Adam did a really good job with the documentation, I left it mostly unchanged.
 
 ## Why This Template?
 
@@ -22,13 +25,6 @@ To setup this repository to your needs, open the [setup.gradle](buildscripts/set
 and tweak the `renameConfig` block to your needs. After that, you can run the `renameTemplate` 
 gradle task to have the app module's package name and relevant strings replaced.
 
-### Cleanup
-
-After [this PR](https://github.com/AdamMc331/AndroidAppTemplate/pull/44), running the renameTemplate
-task should do all the necessary cleanup like deleting the setup file and test workflow so you can 
-go ahead and commit the renamed files and be on your way. If you encounter any problems with the setup
-workflow, please report a new [issue](https://github.com/AdamMc331/AndroidAppTemplate/issues).
-
 ## What's Included
 
 A number of third party dependencies are included in this template. They are also documented inside the [documentation folder](/documentation). The files inside this documentation folder are written in such a way that you can keep them in your real project, to let team members read up on why dependencies are included and how they work.
@@ -43,13 +39,6 @@ The dependencies in the template include:
 * [LeakCanary](https://square.github.io/leakcanary/) for detecting memory leaks.
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) dependencies, which can be removed via setup.gradle if necessary.
 * [Room](https://developer.android.com/training/data-storage/room) dependencies, which can be removed via setup.gradle if necessary. 
-
-### Danger
-
-This template uses [Danger](https://danger.systems) which will perform some checks against our 
-pull requests. You can find the list of checks in the [Dangerfile](Dangerfile). In addition, we 
-have a GitHub Actions workflow for Danger checks. In order for that to work, you'll need a 
-Danger API key setup in your GitHub secrets. Info on this can be found [here](https://www.jessesquires.com/blog/2020/04/10/running-danger-on-github-actions/). 
 
 ### Templates
 
