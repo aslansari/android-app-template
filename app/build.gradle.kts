@@ -50,7 +50,7 @@ dependencies {
     implementation(libs.square.retrofit)
     implementation(libs.square.retrofit.converter.moshi)
 
-    testImplementation(libs.junit)
+    testImplementation(libs.junit4)
 
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

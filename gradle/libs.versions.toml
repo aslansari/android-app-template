@@ -70,7 +70,7 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt"
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
-junit = { module = "junit:junit", version.ref = "junit" }
+junit4 = { module = "junit:junit", version.ref = "junit" }
 square-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
 square-moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 square-moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
@@ -85,6 +85,7 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+com-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 google-services = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
