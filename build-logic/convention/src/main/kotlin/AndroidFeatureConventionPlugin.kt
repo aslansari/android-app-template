@@ -11,13 +11,13 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                apply("template.name.android.library")
-                apply("template.name.android.hilt")
+                apply("convention.android.library")
+                apply("convention.android.hilt")
             }
             extensions.configure<LibraryExtension> {
                 defaultConfig {
                     testInstrumentationRunner =
-                        "template.core.testing.NiaTestRunner"
+                        "template.core.testing.AppTestRunner"
                 }
             }
 

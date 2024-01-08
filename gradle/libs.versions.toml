@@ -94,3 +94,19 @@ com-android-test = { id = "com.android.test", version.ref = "com-android-test" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt-plugin" }
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter-plugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-plugin" }
+
+convention-android-application = { id = "convention.android.application", version = "unspecified" }
+convention-android-application-compose = { id = "convention.android.application.compose", version = "unspecified" }
+convention-android-application-firebase = { id = "convention.android.application.firebase", version = "unspecified" }
+convention-android-application-flavors = { id = "convention.android.application.flavors", version = "unspecified" }
+convention-android-application-jacoco = { id = "convention.android.application.jacoco", version = "unspecified" }
+convention-android-feature = { id = "convention.android.feature", version = "unspecified" }
+convention-android-hilt = { id = "convention.android.hilt", version = "unspecified" }
+convention-android-library = { id = "convention.android.library", version = "unspecified" }
+convention-android-library-compose = { id = "convention.android.library.compose", version = "unspecified" }
+convention-android-library-jacoco = { id = "convention.android.library.jacoco", version = "unspecified" }
+convention-android-lint = { id = "convention.android.lint", version = "unspecified" }
+convention-android-room = { id = "convention.android.room", version = "unspecified" }
+convention-android-test = { id = "convention.android.test", version = "unspecified" }
+convention-jvm-library = { id = "convention.jvm.library", version = "unspecified" }
+convention-kotlinter = { id = "convention.kotlinter", version = "unspecified" }

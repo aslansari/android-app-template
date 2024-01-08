@@ -35,51 +35,51 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
-            id = "template.name.android.application.compose"
+            id = "convention.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
-            id = "template.name.android.application"
+            id = "convention.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidApplicationJacoco") {
-            id = "template.name.android.application.jacoco"
+            id = "convention.android.application.jacoco"
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "template.name.android.library.compose"
+            id = "convention.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "template.name.android.library"
+            id = "convention.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidFeature") {
-            id = "template.name.android.feature"
+            id = "convention.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
         register("androidLibraryJacoco") {
-            id = "template.name.android.library.jacoco"
+            id = "convention.android.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
         register("androidTest") {
-            id = "template.name.android.test"
+            id = "convention.android.test"
             implementationClass = "AndroidTestConventionPlugin"
         }
         register("androidRoom") {
-            id = "template.name.android.room"
+            id = "convention.android.room"
             implementationClass = "AndroidRoomConventionPlugin"
         }
         register("androidHilt") {
-            id = "template.name.android.hilt"
+            id = "convention.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
         register("firebase-perf") {
-            id = "template.name.firebase-perf"
+            id = "convention.firebase-perf"
             implementationClass = "FirebasePerfConventionPlugin"
         }
         register("kotlinter") {
-            id = "template.name.kotlinter"
+            id = "convention.kotlinter"
             implementationClass = "KotlinLinterPlugin"
         }
     }

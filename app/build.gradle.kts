@@ -1,9 +1,9 @@
 plugins {
-    id("template.name.android.application")
-    id("template.name.android.application.compose")
-    id("template.name.android.room")
-    id("template.name.android.hilt")
-    id("template.name.kotlinter")
+    alias(libs.plugins.convention.android.application)
+    alias(libs.plugins.convention.android.application.compose)
+    alias(libs.plugins.convention.android.room)
+    alias(libs.plugins.convention.android.hilt)
+    alias(libs.plugins.convention.kotlinter)
 }
 
 android {
@@ -26,7 +26,7 @@ android {
         }
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
