@@ -46,9 +46,9 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.material)
     implementation(libs.compose.ui.tooling)
-    implementation(libs.square.moshi.kotlin)
-    implementation(libs.square.retrofit)
-    implementation(libs.square.retrofit.converter.moshi)
+    implementation(libs.moshi.kotlin.core)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.moshi)
 
     testImplementation(libs.junit4)
 
@@ -59,7 +59,7 @@ dependencies {
 
     debugImplementation(libs.compose.ui.test.manifest)
     debugImplementation(libs.compose.ui.tooling)
-    debugImplementation(libs.square.leakcanary)
+    debugImplementation(libs.leakcanary)
 
-    kapt(libs.square.moshi.kotlin.codegen)
+    ksp(libs.moshi.kotlin.codegen)
 }

@@ -1,7 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     alias(libs.plugins.detekt)
-    alias(libs.plugins.gradle.versions)
     alias(libs.plugins.kotlinter) apply false
     alias(libs.plugins.com.android.application) apply false
     alias(libs.plugins.org.jetbrains.kotlin.android) apply false
@@ -14,7 +13,6 @@ plugins {
 
 apply(from = "buildscripts/githooks.gradle")
 apply(from = "buildscripts/setup.gradle")
-apply(from = "buildscripts/versionsplugin.gradle")
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)

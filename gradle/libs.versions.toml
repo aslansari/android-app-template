@@ -1,53 +1,54 @@
 [versions]
-accompanist = "0.30.1"
-appCompat = "1.6.1"
-androidDesugarJdkLibs = "2.0.3"
-androidGradlePlugin = "8.0.0"
-androidxActivity = "1.7.2"
-androidxAppCompat = "1.5.1"
-androidxBrowser = "1.4.0"
-androidxComposeBom = "2023.06.01"
-androidxComposeCompiler = "1.4.7"
-androidxComposeMaterial3 = "1.1.0-alpha06"
-androidxComposeRuntimeTracing = "1.0.0-alpha01"
-androidxCore = "1.9.0"
-androidxCoreSplashscreen = "1.0.0"
-androidxDataStore = "1.0.0"
-androidxEspresso = "3.5.0"
-androidxHiltNavigationCompose = "1.0.0"
-androidxLifecycle = "2.6.0-alpha05"
-androidxTest = "1.1.5"
-firebaseBom = "31.2.0"
-firebaseCrashlyticsPlugin = "2.9.7"
-gmsPlugin = "4.3.14"
-kotlin = "1.8.21"
-ksp = "1.8.21-1.0.11"
-dagger = "2.45"
-com-android-test = "8.0.0"
-compileSdk = "33"
-composeCompiler = "1.4.7"
-detektGradlePlugin = "1.22.0"
-espresso = "3.5.1"
-gradleVersionsPlugin = "0.46.0"
-hilt = "2.47"
-junit = "4.13.2"
-kotlinter = "3.14.0"
-ktxCore = "1.10.1"
-leakCanary = "2.10"
-lifecycle = "2.6.1"
-material = "1.9.0"
+# Project
 minSdk = "21"
+compile-sdk = "33"
+compose-compiler = "1.5.7"
+kotlin = "1.9.21"
+
+# Plugins
+android-gradle-plugin = "8.2.1"
+com-android-test = "8.2.1"
+firebase-crashlytics-plugin = "2.9.9"
+gms-plugin = "4.4.0"
+ksp-plugin = "1.9.21-1.0.16"
+dagger-plugin = "2.50"
+detekt-plugin = "1.22.0"
+kotlinter-plugin = "3.14.0"
+
+# Libraries
+accompanist = "0.32.0"
+andrdoid-desugar-jdk-libs = "2.0.4"
+androidx-activity = "1.8.2"
+androidx-appcompat = "1.6.1"
+androidx-browser = "1.4.0"
+androidx-core = "1.9.0"
+androidx-splashscreen = "1.0.0"
+androidx-datastore = "1.0.0"
+androidx-espresso = "3.5.0"
+androidx-lifecycle = "2.6.0-alpha05"
+androidx-test = "1.1.5"
+compose-bom = "2023.10.01"
+compose-material3 = "1.1.0-alpha06"
+compose-runtime-tracing = "1.0.0-alpha01"
+hilt-navigation-compose = "1.0.0"
+firebaseBom = "31.2.0"
+espresso = "3.5.1"
+junit = "4.13.2"
+ktx-core = "1.12.0"
+leakCanary = "2.10"
+lifecycle = "2.6.2"
+material = "1.11.0"
 moshi = "1.15.0"
 retrofit = "2.9.0"
-room = "2.5.2"
+room = "2.6.1"
 
 [libraries]
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
-android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "andrdoid-desugar-jdk-libs" }
 android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktxCore" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx-core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
@@ -55,8 +56,8 @@ androidx-room-paging = { group = "androidx.room", name = "room-paging", version.
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 androidx-room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
-androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTest" }
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 compose-material = { group = "androidx.compose.material3", name = "material3" }
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -65,33 +66,31 @@ compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-mani
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
-dependency-versions-plugin = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "gradleVersionsPlugin" }
-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
-hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hilt-android-core = { module = "com.google.dagger:hilt-android", version.ref = "dagger-plugin" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger-plugin" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "dagger-plugin" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger-plugin" }
 junit4 = { module = "junit:junit", version.ref = "junit" }
-square-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
-square-moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
-square-moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
-square-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-square-retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
+moshi-kotlin-core = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 
 # Dependencies of the included build-logic
-android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "android-gradle-plugin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-firebase-crashlytics-gradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsPlugin" }
-ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+firebase-crashlytics-gradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebase-crashlytics-plugin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp-plugin" }
 
 [plugins]
-com-android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-com-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+com-android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+com-android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
-google-services = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
+dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger-plugin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "gms-plugin" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-plugin" }
 com-android-test = { id = "com.android.test", version.ref = "com-android-test" }
-gradle-versions = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionsPlugin" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
-kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt-plugin" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter-plugin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-plugin" }
