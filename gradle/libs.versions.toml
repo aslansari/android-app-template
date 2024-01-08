@@ -1,7 +1,7 @@
 [versions]
 # Project
 minSdk = "21"
-compile-sdk = "33"
+compile-sdk = "34"
 compose-compiler = "1.5.7"
 kotlin = "1.9.21"
 
