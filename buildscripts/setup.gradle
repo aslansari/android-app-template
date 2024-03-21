@@ -102,9 +102,9 @@ task replaceTemplateReferences {
         )
 
         replaceTextInFile(
-                "${rootDir}/app/src/main/res/values/strings.xml",
-                "<string name=\"app_name\">${renameConfig.templateName}</string>",
-                "<string name=\"app_name\">${renameConfig.newProjectName}</string>",
+                "${rootDir}/build-logic/convention/src/main/kotlin/template/Flavor.kt",
+                "append\\(\"${renameConfig.templateName}\"",
+                "append\\(\"${renameConfig.newProjectName}\"",
         )
 
         replaceTextInFile(
