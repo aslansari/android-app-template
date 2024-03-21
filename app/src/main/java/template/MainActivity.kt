@@ -6,11 +6,16 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.Modifier
 import template.theme.TemplateTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,10 +30,14 @@ class MainActivity : ComponentActivity() {
             SystemBarStyleEffect(darkTheme = darkTheme)
 
             TemplateTheme {
-                Surface(
-                    color = MaterialTheme.colorScheme.background,
-                ) {
-                    Greeting("Android")
+                Surface {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .windowInsetsPadding(WindowInsets.systemBars),
+                    ) {
+                        Greeting("Android")
+                    }
                 }
             }
         }
