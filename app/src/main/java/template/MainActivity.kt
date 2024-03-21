@@ -2,26 +2,27 @@ package template
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.ui.graphics.Color
-import androidx.core.view.WindowCompat
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import template.theme.TemplateTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        configureEdgeToEdgeWindow()
+        enableEdgeToEdge()
 
         setContent {
-            ConfigureTransparentSystemBars()
+            val darkTheme = isSystemInDarkTheme()
+
+            SystemBarStyleEffect(darkTheme = darkTheme)
 
             TemplateTheme {
                 Surface(
@@ -34,32 +35,25 @@ class MainActivity : ComponentActivity() {
     }
 
     /**
-     * Configures our [MainActivity] window so that it reaches edge to edge of the device, meaning
-     * content can be rendered underneath the status and navigation bars.
-     *
-     * This method works hand in hand with [ConfigureTransparentSystemBars], to make sure content
-     * behind these bars is visible.
-     *
-     * Keep in mind that if you need to make sure your content padding doesn't clash with the status bar text/icons,
-     * you can leverage modifiers like `windowInsetsPadding()` and `systemBarsPadding()`. For more information,
-     * read the Compose WindowInsets docs: https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/WindowInsets
+     * Update the edge to edge configuration to match the theme
+     * This is the same parameters as the default enableEdgeToEdge call, but we manually
+     * resolve whether or not to show dark theme using uiState, since it can be different
+     * than the configuration's dark theme value based on the user preference.
      */
-    private fun configureEdgeToEdgeWindow() {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-    }
-
     @Composable
-    private fun ConfigureTransparentSystemBars() {
-        val systemUiController = rememberSystemUiController()
-        val useDarkIcons = !isSystemInDarkTheme()
-
-        DisposableEffect(systemUiController, useDarkIcons) {
-            systemUiController.setSystemBarsColor(
-                color = Color.Transparent,
-                darkIcons = useDarkIcons,
+    private fun SystemBarStyleEffect(darkTheme: Boolean) {
+        DisposableEffect(darkTheme) {
+            enableEdgeToEdge(
+                statusBarStyle = SystemBarStyle.auto(
+                    android.graphics.Color.TRANSPARENT,
+                    android.graphics.Color.TRANSPARENT,
+                ) { darkTheme },
+                navigationBarStyle = SystemBarStyle.auto(
+                    lightScrim,
+                    darkScrim,
+                ) { darkTheme },
             )
-
-            onDispose { }
+            onDispose {}
         }
     }
 }
@@ -68,3 +62,17 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
+
+/**
+ * The default light scrim, as defined by androidx and the platform:
+ * https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:activity/activity/src/main/java/androidx/activity/EdgeToEdge.kt;l=35-38;drc=27e7d52e8604a080133e8b842db10c89b4482598
+ */
+@Suppress("MagicNumber")
+private val lightScrim = android.graphics.Color.argb(0xe6, 0xFF, 0xFF, 0xFF)
+
+/**
+ * The default dark scrim, as defined by androidx and the platform:
+ * https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:activity/activity/src/main/java/androidx/activity/EdgeToEdge.kt;l=40-44;drc=27e7d52e8604a080133e8b842db10c89b4482598
+ */
+@Suppress("MagicNumber")
+private val darkScrim = android.graphics.Color.argb(0x80, 0x1b, 0x1b, 0x1b)
