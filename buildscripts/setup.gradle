@@ -104,6 +104,11 @@ task renameCoreCommonPackage(type: Copy) {
 
     doLast {
         delete(startingDirectory)
+        replaceTextInFile(
+                "${rootDir}/core/common/build.gradle.kts",
+                "namespace = \"${renameConfig.templateName}",
+                "namespace = \"${renameConfig.newPackage}",
+        )
     }
 }
 
@@ -145,6 +150,11 @@ task renameCoreDesignSystemPackage(type: Copy) {
 
     doLast {
         delete(startingDirectory)
+        replaceTextInFile(
+                "${rootDir}/core/designsystem/build.gradle.kts",
+                "namespace = \"${renameConfig.templateName}",
+                "namespace = \"${renameConfig.newPackage}",
+        )
     }
 }
 
