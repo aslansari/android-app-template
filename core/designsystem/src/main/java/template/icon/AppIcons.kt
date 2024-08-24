@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -23,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import template.theme.TemplateTheme
 
 object AppIcons {
+    val Home = Icons.Rounded.Home
 }
 
 @Composable
@@ -56,8 +59,7 @@ private fun IconCollection() {
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 maxItemsInEachRow = 3,
             ) {
-                // TODO Add icons here using IconSet
-//                IconSet(icon = AppIcons.Liquor, label = "Liquor")
+                IconSet(icon = AppIcons.Home, label = "Home")
             }
         }
     }
