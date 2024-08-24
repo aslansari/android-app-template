@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.google.services) apply false
     alias(libs.plugins.firebase.crashlytics) apply false
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.com.android.library) apply false
 }
 
 apply(from = "buildscripts/githooks.gradle")
