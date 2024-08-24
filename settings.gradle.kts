@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "template"
 include(":app")
 include(":core:common")
+include(":core:designsystem")

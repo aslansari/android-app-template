@@ -28,8 +28,13 @@ androidx-espresso = "3.5.0"
 androidx-lifecycle = "2.6.0-alpha05"
 androidx-test = "1.1.5"
 compose-bom = "2024.03.00"
-compose-material3 = "1.1.0-alpha06"
+material3 = "1.2.1"
+compose-lint-checks = "1.2.0"
+compose-state-events = "2.0.3"
 compose-runtime-tracing = "1.0.0-alpha01"
+detekt-rules-compose = "1.3.0"
+chucker = "3.5.2"
+coil = "2.6.0"
 hilt-navigation-compose = "1.0.0"
 firebaseBom = "31.2.0"
 espresso = "3.5.1"
@@ -58,14 +63,26 @@ androidx-room-testing = { group = "androidx.room", name = "room-testing", versio
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
-compose-material = { group = "androidx.compose.material3", name = "material3" }
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
-compose-ui-test-junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+compose-runtime-tracing = { group = "androidx.compose.runtime", name = "runtime-tracing", version.ref = "compose-runtime-tracing" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+compose-lint-checks = { group = "com.slack.lint.compose", name = "compose-lint-checks", version.ref = "compose-lint-checks" }
+compose-state-events = { group = "com.github.leonard-palm", name = "compose-state-events", version.ref = "compose-state-events" }
+detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version.ref = "detekt-rules-compose" }
+coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
+chucker-no-op = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
 hilt-android-core = { module = "com.google.dagger:hilt-android", version.ref = "dagger-plugin" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger-plugin" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "dagger-plugin" }
