@@ -12,7 +12,5 @@ android {
 }
 
 dependencies {
-//    api(libs.timber)
-//    testImplementation(libs.kotlinx.coroutines.test)
-//    testImplementation(libs.turbine)
+    api(libs.timber)
 }
